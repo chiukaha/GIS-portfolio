@@ -1,0 +1,44 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "about"
+    label: "About Me"
+    files:
+      - file: "content/about.md"
+        label: "About"
+        name: "about"
+        fields:
+          - { label: "About Me", name: "body", widget: "markdown" }
+
+  - name: "skills"
+    label: "Skills"
+    folder: "content/skills"
+    create: true
+    fields:
+      - { label: "Skill", name: "title", widget: "string" }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+
+  - name: "contact"
+    label: "Contact Info"
+    files:
+      - file: "content/contact.md"
+        label: "Contact"
+        name: "contact"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "LinkedIn", name: "linkedin", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Languages", name: "languages", widget: "string" }
+          - { label: "Hobbies", name: "hobbies", widget: "string" }
